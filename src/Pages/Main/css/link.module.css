@@ -1,0 +1,25 @@
+.button {
+    position: relative;
+}
+
+.beforeLink {
+    position: absolute;
+    z-index: 0;
+    background-color: var(--fandango-pink);
+    top: 20px;
+    left: -10px;
+    height: 40px;
+    width: 155px;
+}
+
+.link {
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    font-size: 24px;
+    padding: 10px 20px;
+    color: var(--fandango-pink);
+    border: 1px solid var(--fandango-pink);
+    text-decoration: none;
+    box-sizing: border-box;
+}

@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Header from './Pages/Main/Header';
 
-class App extends Component {
+class App extends React.Component {
     state = {  }
     render() { 
-        return ( <div>Hello World!</div> );
+        return ( 
+             <Header />
+        );
     }
 }
  
