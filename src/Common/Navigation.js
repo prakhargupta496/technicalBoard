@@ -15,7 +15,7 @@ function Navigation(props) {
 
             <Navbar.Collapse id="club-nav" activeKey="/home">
 
-                <Nav className="justify-content-end">
+                <Nav className="ml-auto">
                     <Nav.Item>
                         <Nav.Link href="/home">Home</Nav.Link>
                     </Nav.Item>
