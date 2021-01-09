@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import Brand from '../images/avant.svg';
+import Brand from '../Images/avant.svg';
 import Styles from './css/nav.module.css';
 
 function Navigation(props) {
