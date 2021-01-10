@@ -1,11 +1,11 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import Brand from '../Images/avant.svg';
+import Brand from '../images/avant.svg';
 import Styles from './css/nav.module.css';
 
 function Navigation(props) {
     return (
-        <Navbar collapseOnSelect variant="light" bg="light" expand="lg" fixed="top" className={Styles.nav}>
+        <Navbar collapseOnSelect variant="light" bg="light" expand="lg" className={Styles.nav}>
 
             <Navbar.Brand href="#">
                 <img src={Brand} className={`${Styles.image} d-inline-block`} alt="Logo"/>

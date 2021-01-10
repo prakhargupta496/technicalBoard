@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Link from './Link';
-import img from '../../Images/construction.svg';
+import img from './images/construction.svg';
 import styles from './css/header.module.css';
 
 class Header extends React.Component {

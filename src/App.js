@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Pages/Main/Header';
 import Navigation from './Common/Navigation';
+import About from './Pages/Main/About';
 
 class App extends React.Component {
     state = {  }
@@ -15,6 +16,7 @@ class App extends React.Component {
                 only generate a link with an Image */}
                 <Navigation />
                 <Header name = "Avant" altName = "Programming Club" link = "#"/>
+                <About />
             </div>
         );
     }
