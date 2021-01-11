@@ -1,3 +1,4 @@
 # Technical Board #
 
-Link to Documentation - [Click Here!](https://github.com/mynameisankit/technicalBoard/tree/main/documentation)
+Documentation is in the Wiki of the Repository
+Link - [Click Here!](https://github.com/mynameisankit/technicalBoard/wiki)
