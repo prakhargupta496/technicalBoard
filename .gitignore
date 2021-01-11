@@ -24,3 +24,6 @@ yarn-error.log*
 
 #VS Code Development Cash
 .eslintcache
+
+#Debug Logs
+debug.log
