@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './components/main/Header';
-import About from './components/main/About';
-import Gallery from './components/main/Gallery';
-import Events from './components/main/Events';
+import Header from '../components/main/Header';
+import About from '../components/main/About';
+import Gallery from '../components/main/Gallery';
+import Events from '../components/main/Events';
 
 function Avant() {
     return ( 
