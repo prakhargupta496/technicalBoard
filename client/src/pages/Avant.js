@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './components/main/Header';
-import Navigation from './components/common/Navigation';
 import About from './components/main/About';
 import Gallery from './components/main/Gallery';
+import Events from './components/main/Events';
 
 function Avant() {
     return ( 
@@ -13,10 +13,10 @@ function Avant() {
 
             If none of the above are provided, then the component will
             only generate a link with an Image */}
-            <Navigation />
-            <Header name = "Avant" altName = "Programming Club" link = "#"/>
+            <Header name = "<Avant />" altName = 'alt = "Programming Club"' link = "#"/>
             <About />
             <Gallery />
+            <Events />
         </div>
     );
 }

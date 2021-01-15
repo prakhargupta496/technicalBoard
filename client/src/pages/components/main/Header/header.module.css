@@ -27,11 +27,3 @@
     height: 600px;
     width: 600px;
 }
-
-.link {
-    height: fit-content;
-    width: fit-content;
-
-    margin-left: auto;
-    margin-right: auto;
-}

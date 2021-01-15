@@ -1,11 +1,14 @@
 .aboutUs {
     font-family: var(--cabin);
     text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
 .heading {
     display: block;
     position: relative;
+    filter: drop-shadow(30px 10px 300px #000000);
 }
 
 @media only screen and (min-width: 992px) {

@@ -1,6 +1,19 @@
 .button {
     position: relative;
 
+    height: fit-content;
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.small {
+    width: 150px;
+    height: 60px;
+}
+
+.big {
     width: 250px;
     height: 80px;
 }
@@ -20,7 +33,14 @@
 
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.bigLink {
     font-size: 40px;
+}
+
+.smallLink {
+    font-size: 24px;
 }
 
 .button::before {

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Row, Col, Image } from 'react-bootstrap';
-import { motion } from 'framer-motion';
-import styles from './css/gallery.module.css';
+import { Container, Row, Col } from 'react-bootstrap';
+import Styles from './gallery.module.css';
+import Link from '../../common/Link';
+import SectionHeader from '../../common/SectionHeader';
 
 class Gallery extends React.Component {
     constructor(props) {
@@ -20,19 +21,23 @@ class Gallery extends React.Component {
         const list = this.state.map(img => {
             return (
                 <Col md={4} key={img}>
-                    <div className={styles.container}>
-                        <img src={img} className={styles.image}/>
+                    <div className={Styles.container}>
+                        <img src={img} className={Styles.image}/>
                     </div>
                 </Col>
             );
         });
 
         return (
-            <Container fluid className={styles.gallery}>
-                <Row>
-                    {list}
-                 </Row>
-            </Container>
+            <section className={Styles.gallery}>
+                <SectionHeader>Gallery</SectionHeader>
+                <Container fluid>
+                    <Row>
+                        {list}
+                     </Row>
+                </Container>
+                <Link href="#">Load More</Link>
+            </section>
         );
     }
 }
