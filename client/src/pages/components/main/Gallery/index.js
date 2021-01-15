@@ -36,7 +36,7 @@ class Gallery extends React.Component {
                         {list}
                      </Row>
                 </Container>
-                <Link href="#">Load More</Link>
+                <Link href="#" small>Load More</Link>
             </section>
         );
     }
