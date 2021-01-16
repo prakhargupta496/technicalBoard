@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Link from '../../common/Link';
+import Link from '../common/Link';
 import img from './images/construction.svg';
 import Styles from './header.module.css';
 
