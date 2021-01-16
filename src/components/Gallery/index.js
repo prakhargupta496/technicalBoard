@@ -21,9 +21,7 @@ class Gallery extends React.Component {
         return (
             <section className={Styles.gallery}>
                 <SectionHeader>Gallery</SectionHeader>
-                <Grid>
-                    {this.state}
-                </Grid>
+                <Grid>{this.state}</Grid>
                 <Link href="#" small>Load More</Link>
             </section>
         );

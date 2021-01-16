@@ -5,7 +5,7 @@ import Styles from './grid.module.css';
 
 function Grid(props) {
     return (
-        <Container fluid>
+        <Container fluid className={Styles.grid}>
             <Row>
                 {
                     props.children.map(item => {

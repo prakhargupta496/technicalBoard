@@ -1,0 +1,33 @@
+.grid {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entry {
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    height: 400px;
+}
+
+.wrapper {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.image {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
