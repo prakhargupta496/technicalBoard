@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import About from '../components/About';
 import Gallery from '../components/Gallery';
 import Events from '../components/Events';
+import Coordinators from '../components/Coordinators';
 
 function Avant() {
     return ( 
@@ -15,8 +16,9 @@ function Avant() {
             only generate a link with an Image */}
             <Header name = "< Avant" altName = 'alt = "Programming Club" />' link = "#"/>
             <About />
-            <Gallery />
             <Events />
+            <Gallery />
+            <Coordinators />
         </div>
     );
 }

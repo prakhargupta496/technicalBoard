@@ -26,13 +26,12 @@
     background-color: white;
     color: var(--fandango-pink);
     border: 1px solid var(--fandango-pink);
-    text-decoration: none;
     box-sizing: border-box;
     border-radius: 0px;
     text-align: center;
-
     padding-top: 10px;
     padding-bottom: 10px;
+    text-decoration: none;
 }
 
 .bigLink {

@@ -32,7 +32,7 @@ class About extends React.Component {
                             <Col>
                                 <Image src={image} className={Styles.image}></Image>
                                 <p className={Styles.content}>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat risus non lectus sollicitudin, eget commodo tortor consectetur. Donec ornare velit ac efficitur efficitur. Morbi eu metus eu dui dictum dignissim at vehicula nunc. Ut ac ornare urna. Phasellus purus enim, viverra in feugiat sit amet, ullamcorper ac eros. Suspendisse potenti. Donec ut malesuada risus. Praesent pulvinar, erat non efficitur gravida, sapien orci ultricies ligula, quis lacinia metus ligula non tellus. Mauris quis massa vitae lectus tempor eleifend eget eget lectus. Donec finibus efficitur ultrices. Sed scelerisque tortor eget nunc semper, eu scelerisque neque blandit. Vivamus nec bibendum enim.
+                                    Avant (Programming Club) is the officially registered group in the Indian Institute of Information Technology Guwahati. The Club Works aim to accelerate learning and impart knowledge in various fields like Competitive Programming,  Web Development, App Development and Open Source. The Club also organizes various activities so they can improve and make the overall journey fun.
                             </p>
                             </Col>
                         </Row>)
@@ -42,7 +42,7 @@ class About extends React.Component {
                             <Image src={heading} className={Styles.heading} style={{ transform: 'rotate(90deg)' }} />
                             <Image src={image} className={Styles.image}></Image>
                             <p className={Styles.content}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat risus non lectus sollicitudin, eget commodo tortor consectetur. Donec ornare velit ac efficitur efficitur. Morbi eu metus eu dui dictum dignissim at vehicula nunc. Ut ac ornare urna. Phasellus purus enim, viverra in feugiat sit amet, ullamcorper ac eros. Suspendisse potenti. Donec ut malesuada risus. Praesent pulvinar, erat non efficitur gravida, sapien orci ultricies ligula, quis lacinia metus ligula non tellus. Mauris quis massa vitae lectus tempor eleifend eget eget lectus. Donec finibus efficitur ultrices. Sed scelerisque tortor eget nunc semper, eu scelerisque neque blandit. Vivamus nec bibendum enim.
+                                Avant (Programming Club) is the officially registered group in the Indian Institute of Information Technology Guwahati. The Club Works aim to accelerate learning and impart knowledge in various fields like Competitive Programming,  Web Development, App Development and Open Source. The Club also organizes various activities so they can improve and make the overall journey fun.
                         </p>
                         </div>)
                     }

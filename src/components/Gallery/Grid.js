@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import Entry from './Entry';
 import Styles from './grid.module.css';
+import Item from './Item';
 
 function Grid(props) {
     return (
@@ -10,7 +10,7 @@ function Grid(props) {
                 {
                     props.children.map(item => {
                         return (
-                            <Entry src={item} />
+                            <Item key={props.img} src={item} />
                         );
                     })
                 }
