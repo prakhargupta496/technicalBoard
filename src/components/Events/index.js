@@ -1,8 +1,6 @@
 import React from 'react';
 import SectionHeader from '../common/SectionHeader';
-import { motion } from 'framer-motion';
 import Link from '../common/Link';
-import Styles from './events.module.css';
 
 class Events extends React.Component {
     constructor(props) {

@@ -10,7 +10,7 @@ function Grid(props) {
                 {
                     props.children.map(item => {
                         return (
-                            <Item key={props.img} src={item} />
+                            <Item key={item.description} src={item.image} />
                         );
                     })
                 }

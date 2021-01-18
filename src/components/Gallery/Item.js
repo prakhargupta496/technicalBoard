@@ -1,22 +1,22 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import Styles from './item.module.css';
 
 function Entry(props) {
     return (
         <Col md={4} className={Styles.entry}>
-            <div className={Styles.wrapper}>
-                <img src={props.src} className={Styles.image} alt={props.description} />
-                <motion.div className={Styles.overlay} whileHover={{
+            <Card className={Styles.card}>
+                <Card.Img src={props.src} alt="Card image" className={Styles.image} />
+                <Card.ImgOverlay as={motion.div} className={Styles.overlay} whileHover={{
                     opacity: 1,
                     transition: { duration: 0.2 },
                 }}>
-                    <div className={Styles.content}>
-                        <h1>Lorem Ipsum</h1>
-                    </div>
-                </motion.div>
-            </div>
+                    <Card.Body className={Styles.content}>
+                        <Card.Title as="h1" className={Styles.heading}>Card title</Card.Title>
+                    </Card.Body>
+                </Card.ImgOverlay>
+            </Card>
         </Col>
     );
 }
