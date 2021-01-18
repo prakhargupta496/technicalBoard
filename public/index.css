@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap');
 
+body {
+    overflow-x: hidden;
+}
+
 :root {
     /* Colour Scheme */
-    --fandango-pink: #e8417cff;
-    --red-violet-crayola: #bc3b8dff;
-    --rich-black-fogra-39: #090809ff;
-    --light-sky-blue: #73cdffff;
-    --bdazzled-blue: #235789ff;
+    --colour1: #e8417c;
+    --colour2: #bc3b8d;
+    --colour3: #090809;
+    --colour4: #73cdff;
+    --colour5: #235789;
 
     /* Fonts */
     --cabin: 'Cabin', sans-serif;

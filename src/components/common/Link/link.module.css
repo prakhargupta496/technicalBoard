@@ -24,8 +24,8 @@
     height: 100%;
     width: 100%;
     background-color: white;
-    color: var(--fandango-pink);
-    border: 1px solid var(--fandango-pink);
+    color: var(--colour1);
+    border: 1px solid var(--colour1);
     box-sizing: border-box;
     border-radius: 0px;
     text-align: center;
@@ -46,7 +46,7 @@
     z-index: 0;
     position: absolute;
     content: '';
-    background-color: var(--fandango-pink);
+    background-color: var(--colour1);
     width: 100%;
     height: 100%;
 }
