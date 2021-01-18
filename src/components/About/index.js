@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
+import Section from '../common/Section';
 import heading from './images/aboutHeading.svg';
 import image from './images/about.svg';
 import Styles from './about.module.css';
@@ -22,7 +23,7 @@ class About extends React.Component {
 
     render() {
         return (
-            <section>
+            <Section>
                 <Container fluid className={Styles.aboutUs}>
                     {this.state.width > 1000 &&
                         (<Row>
@@ -47,7 +48,7 @@ class About extends React.Component {
                         </div>)
                     }
                 </Container>
-            </section>
+            </Section>
         );
     }
 }

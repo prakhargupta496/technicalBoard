@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionHeader from '../common/SectionHeader';
+import Section from '../common/Section';
 import Link from '../common/Link';
 import EventsList from './EventsList';
 
@@ -10,11 +11,11 @@ class Events extends React.Component {
 
     render() {
         return (
-            <section>
+            <Section>
                 <SectionHeader>Events</SectionHeader>
                 <EventsList />
                 <Link href="#" small>Load More</Link>
-            </section>
+            </Section>
         );
     }
 }

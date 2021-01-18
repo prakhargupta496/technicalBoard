@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '../common/Link';
+import Section from '../common/Section';
 import SectionHeader from '../common/SectionHeader';
 import Grid from './Grid';
 
@@ -36,13 +37,13 @@ class Gallery extends React.Component {
 
     render() {
         return (
-            <section>
+            <Section>
                 <SectionHeader>Gallery</SectionHeader>
                 <Grid>
                     {this.state}
                 </Grid>
                 <Link href="#" small>Load More</Link>
-            </section>
+            </Section>
         );
     }
 }

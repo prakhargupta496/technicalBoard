@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Link from '../common/Link';
+import Section from '../common/Section';
 import img from './images/construction.svg';
 import Styles from './header.module.css';
 
@@ -43,7 +44,7 @@ class Header extends React.Component {
 
         //Return the Component
         return (
-            <section>
+            <Section>
                 <Container fluid className={Styles.header}>
                     <Row>
                         <Col>
@@ -57,7 +58,7 @@ class Header extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-            </section>
+            </Section>
         );
     }
 }
