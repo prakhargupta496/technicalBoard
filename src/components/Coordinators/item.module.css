@@ -1,0 +1,47 @@
+.entry {
+    font-family: var(--cabin);
+    padding: 0px;
+}
+
+.card {
+    border: 0px;
+    background-color: transparent;
+    height: 400px;
+}
+
+.wrapper {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+}
+
+.overlay {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background: #23578988;
+}
+
+.content {
+    height: 100%;
+    padding: 0px;
+    text-align: center;
+    color: white;
+}
+
+.heading {
+    margin-top: auto;
+    font-size: 40px;
+}
+
+.icon {
+    color: black;
+    font-weight: 30px;
+}

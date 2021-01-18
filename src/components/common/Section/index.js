@@ -1,9 +1,10 @@
 import React from 'react';
-import Styles from './section.module.css';
 
 function Section(props) {
+    const customStyle = props.style;
+
     return (
-        <section className={Styles.section}>
+        <section Styles={customStyle}>
             {props.children}
         </section>
     );

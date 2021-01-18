@@ -2,7 +2,7 @@ import React from 'react';
 import SectionHeader from '../common/SectionHeader';
 import Section from '../common/Section';
 import Link from '../common/Link';
-import EventsList from './EventsList';
+import Grid from './Grid';
 
 class Events extends React.Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class Events extends React.Component {
         return (
             <Section>
                 <SectionHeader>Events</SectionHeader>
-                <EventsList />
+                <Grid />
                 <Link href="#" small>Load More</Link>
             </Section>
         );

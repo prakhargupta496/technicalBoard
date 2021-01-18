@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Item from './Item';
 
-class EventsList extends React.Component {
+class Grid extends React.Component {
     constructor(props) {
         super(props);
 
@@ -56,4 +56,4 @@ class EventsList extends React.Component {
     }
 }
 
-export default EventsList;
+export default Grid;
