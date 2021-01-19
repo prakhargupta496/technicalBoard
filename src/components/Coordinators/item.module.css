@@ -34,14 +34,11 @@
     padding: 0px;
     text-align: center;
     color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .heading {
-    margin-top: auto;
+    margin-top: 0px;
     font-size: 40px;
-}
-
-.icon {
-    color: black;
-    font-weight: 30px;
 }
