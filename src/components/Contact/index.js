@@ -11,12 +11,8 @@ class Contact extends React.Component {
     }
 
     render() {
-        const sectionColour = "#73cdff";
-
         return (
-            <Section Style={{
-                backgroundColor: sectionColour,
-            }}>
+            <Section id="contactUs" style={this.props.style}>
                 <Container fluid>
                     <Row>
                         <Col className={Styles.form} md={6}>

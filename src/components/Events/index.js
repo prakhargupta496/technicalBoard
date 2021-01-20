@@ -11,10 +11,12 @@ class Events extends React.Component {
 
     render() {
         return (
-            <Section>
+            <Section style={this.props.style}>
                 <SectionHeader>Events</SectionHeader>
                 <Grid />
-                <Link href="#" small>Load More</Link>
+                {   this.props.small &&
+                    (<Link href="#" small>Load More</Link>)
+                }
             </Section>
         );
     }

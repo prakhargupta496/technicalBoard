@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Section(props) {
-    let customStyle = props.Style;
+    let customStyle = props.style;
     const { innerHeight } = window;
     
     // if(customStyle) {
@@ -14,7 +14,7 @@ function Section(props) {
     // }
 
     return (
-        <section style={customStyle}>
+        <section id={props.id} style={customStyle}>
             {props.children}
         </section>
     );

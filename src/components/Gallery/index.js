@@ -7,7 +7,7 @@ import Grid from './Grid';
 class Gallery extends React.Component {
     constructor(props) {
         super(props);
-        this.state = [ 
+        this.state = [
             {
                 image: "https://images.unsplash.com/photo-1610288291998-366d446646cc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1188&q=80",
                 description: "Event1"
@@ -37,12 +37,14 @@ class Gallery extends React.Component {
 
     render() {
         return (
-            <Section>
+            <Section style={this.props.style}>
                 <SectionHeader>Gallery</SectionHeader>
                 <Grid>
                     {this.state}
                 </Grid>
-                <Link href="#" small>Load More</Link>
+                {   this.props.small &&
+                    <Link href="#" small>Load More</Link>
+                }
             </Section>
         );
     }

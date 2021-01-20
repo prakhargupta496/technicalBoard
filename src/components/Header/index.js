@@ -44,7 +44,7 @@ class Header extends React.Component {
 
         //Return the Component
         return (
-            <Section>
+            <Section style={this.props.style}>
                 <Container fluid className={Styles.header}>
                     <Row>
                         <Col>

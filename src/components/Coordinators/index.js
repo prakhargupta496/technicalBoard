@@ -1,7 +1,6 @@
 import React from 'react';
 import SectionHeader from '../common/SectionHeader';
 import Section from '../common/Section';
-import Wave from '../common/Effects/Wave';
 import Grid from './Grid';
 
 class Coordinators extends React.Component {
@@ -10,17 +9,12 @@ class Coordinators extends React.Component {
     }
 
     render() {
-        const sectionColour = "#73cdff";
-
         return (
-            <Section>
-                <Wave type="hex" color={sectionColour} anim/>
-                <div style={{
-                    backgroundColor: sectionColour,
-                }}>
+            <Section style={this.props.style}>
+                {   this.props.withHeading &&
                     <SectionHeader>Coordinators</SectionHeader>
-                    <Grid />
-                </div>
+                }
+                <Grid />
             </Section>
         );
     }

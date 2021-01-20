@@ -29,10 +29,10 @@ function Navigation() {
                         <Nav.Link as={NavLink} to="/gallery">Gallery</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link as={NavLink} to="/coordinators">Coordinators</Nav.Link>
+                        <Nav.Link as={NavLink} to="/hallOfFame">Hall Of Fame</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link as={NavLink} to="/contact">Contact Us</Nav.Link>
+                        <Nav.Link href="#contactUs">Contact Us</Nav.Link>
                     </Nav.Item>
 
                 </Nav>
