@@ -1,0 +1,45 @@
+.footer {
+    background-color: #e8417cff;
+    color: whitesmoke;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .mb-2 {
+    text-align: right;
+  }
+  .devTeam {
+    text-align: left;
+  }
+  
+  .events {
+    text-align: left;
+  }
+  h4 {
+    padding-top: 35px;
+    padding-bottom: 20px;
+    /* text-align: left;
+    margin-left: 0px;
+    padding-right: 50px; */
+  }
+  .eventsItem {
+    font-size: 13.5px;
+    line-height: 13px;
+  }
+  
+  .clubs {
+    padding-top: 100px;
+  }
+  
+  Row {
+    text-align: left;
+  }
+  
+  .icon {
+    margin-right: 20px;
+  }
+  .instilogo {
+    text-align: center;
+  }
+  
