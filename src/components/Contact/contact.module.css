@@ -39,3 +39,11 @@
     height: 100%;
     width: 100%;
 }
+
+.button {
+    font-family: var(--cabin);
+    border: 1px solid var(--colour5);
+    background-color: var(--colour5);
+    border-radius: 0px;
+    font-size: 30px;
+}

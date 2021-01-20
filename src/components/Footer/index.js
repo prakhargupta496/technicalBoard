@@ -6,70 +6,88 @@ import Styles from './footer.module.css';
 
 function FooterHeadings(props) {
   return (
-    <h2>{props.children}</h2>
+    <h2 className={Styles.heading}>{props.children}</h2>
   );
+}
+
+function FooterItem(props) {
+  if (props.to) {
+    return (
+      <Button className={Styles.link} as={Link} to={props.to}>{props.children}</Button>
+    );
+  }
+  else if (props.special) {
+    return (
+      <Button className={`${Styles.link} ${Styles.specialLink}`} href={props.href}>{props.children}</Button>
+    );
+  }
+  else if (props.href) {
+    return (
+      <Button className={Styles.link} href={props.href}>{props.children}</Button>
+    );
+  }
 }
 
 function Footer(props) {
   return (
-    <section>
-      <Container fluid className={Styles.footer}>
+    <section className={Styles.footer}>
+      <Container fluid>
 
         <Row md={3} className={Styles.row}>
           <Col>
             <FooterHeadings>Other Pages</FooterHeadings>
             <ButtonGroup vertical>
-              <Button className={Styles.link} as={Link} to="/events">Events</Button>
-              <Button className={Styles.link} as={Link} to="/gallery">Gallery</Button>
-              <Button className={Styles.link} as={Link} to="/hallOfFame">Hall Of Fame</Button>
+              <FooterItem to="/events">Events</FooterItem>
+              <FooterItem to="/gallery">Gallery</FooterItem>
+              <FooterItem to="/hallOfFame">Hall Of Fame</FooterItem>
             </ButtonGroup>
           </Col>
 
           <Col>
             <FooterHeadings>Other Technical Clubs</FooterHeadings>
             <ButtonGroup vertical>
-              <Button className={Styles.link} href="#">Mavericks - The Machine Learning Society</Button>
-              <Button className={Styles.link} href="#">Robotics Club</Button>
-              <Button className={Styles.link} href="#">Google Developer Student Club</Button>
+              <FooterItem href="#">Mavericks - The Machine Learning Society</FooterItem>
+              <FooterItem href="#">Robotics Club</FooterItem>
+              <FooterItem href="#">Google Developer Student Club</FooterItem>
             </ButtonGroup>
           </Col>
 
           <Col>
             <FooterHeadings>Miscellaneous</FooterHeadings>
             <ButtonGroup vertical>
-              <Button className={Styles.link} as={Link} to="/resources">Resources</Button>
-              <Button className={Styles.link} as={Link} to="/">Meet The Development Team</Button>
+              <FooterItem to="/resources">Resources</FooterItem>
+              <FooterItem to="/">Meet The Development Team</FooterItem>
             </ButtonGroup>
           </Col>
         </Row>
 
-        <Row sm={1}>
+        <Row sm={1} className={Styles.row}>
           <Col>
             <FooterHeadings>Social Media Handles</FooterHeadings>
-            <Button className={Styles.link} href="#">
+            <FooterItem href="#">
               <Facebook className={Styles.icon} />
-            </Button>
-            <Button className={Styles.link} href="#">
+            </FooterItem>
+            <FooterItem href="#">
               <Instagram className={Styles.icon} />
-            </Button>
-            <Button className={Styles.link} href="#">
+            </FooterItem>
+            <FooterItem href="#">
               <GitHub className={Styles.icon} />
-            </Button>
-            <Button className={Styles.link} href="#">
+            </FooterItem>
+            <FooterItem href="#">
               <YouTube className={Styles.icon} />
-            </Button>
+            </FooterItem>
           </Col>
         </Row>
 
-        <Row sm={1}>
+        <Row sm={1} className={Styles.row}>
           <Col>
-            <Button className={Styles.link} href="#">Technical Board</Button>
+            <FooterItem special href="#">Technical Board</FooterItem>
           </Col>
         </Row>
 
-        <Row sm={1}>
+        <Row sm={1} className={Styles.row}>
           <Col>
-            <Button className={Styles.link} href="#">Indian Institute of Information Technology Guwahati</Button>
+            <FooterItem special href="http://www.iiitg.ac.in/">Indian Institute of Information Technology Guwahati</FooterItem>
           </Col>
         </Row>
 

@@ -17,7 +17,7 @@ function Contact(props) {
                             <Form.Control className={`${Styles.input} ${Styles.small}`} type="email" placeholder="Your E-Mail" />
                             <Form.Control className={`${Styles.input} ${Styles.small}`} type="text" placeholder="Subject" />
                             <Form.Control className={`${Styles.input} ${Styles.big}`} as="textarea" rows={5} placeholder="Message" />
-                            <Button variant="primary">Primary</Button>
+                            <Button className={Styles.button}>Submit</Button>
                         </Form>
                     </Col>
                     <Col className={Styles.mapContainer}>

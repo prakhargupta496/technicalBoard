@@ -32,7 +32,7 @@ function Navigation() {
                         <Nav.Link as={NavLink} to="/hallOfFame">Hall Of Fame</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="#contactUs">Contact Us</Nav.Link>
+                        <Nav.Link href="/#contactUs">Contact Us</Nav.Link>
                     </Nav.Item>
 
                 </Nav>

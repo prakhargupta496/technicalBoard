@@ -1,18 +1,39 @@
 .footer {
-  background-color: #e8417cff;
+  background-color: var(--colour1);
   color: white;
   text-align: center;
   font-family: var(--cabin);
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.heading {
+  border-bottom: 2px solid white;
 }
 
 .icon {
-  font-size: 60px;
+  font-size: 50px;
   margin-left: 1vw;
   margin-right: 1vw;
+}
+
+.row {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
 }
 
 .link {
   background-color: transparent;
   border: 0px;
+  font-size: 18px;
 }
 
+.link:hover, .link:active, .link:focus {
+  color: black;
+  border: 0px;
+  background: transparent;
+}
+
+.specialLink {
+  font-size: 25px;
+}
