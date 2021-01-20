@@ -6,6 +6,7 @@ import Grid from './Grid';
 class Coordinators extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {};
     }
 
     render() {

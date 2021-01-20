@@ -2,7 +2,7 @@ import React from 'react';
 
 function Section(props) {
     let customStyle = props.style;
-    const { innerHeight } = window;
+    // const { innerHeight } = window;
     
     // if(customStyle) {
     //     customStyle.innerHeight = innerHeight;

@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import EventsPage from './pages/sub-pages/EventsPage';
 import GalleryPage from './pages/sub-pages/GalleryPage';
 import HallOfFame from './pages/sub-pages/HallOfFame';
+import Footer from './components/Footer';
 
 class App extends React.Component {
     constructor(props) {
@@ -29,6 +30,9 @@ class App extends React.Component {
                     <Route path="/gallery" component={GalleryPage} />
                     <Route path="/hallOfFame" component={HallOfFame} />
                 </Switch>
+
+                {/* Footer Component */}
+                <Footer />
 
             </Router>
         );

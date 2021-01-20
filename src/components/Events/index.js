@@ -5,10 +5,6 @@ import Link from '../common/Link';
 import Grid from './Grid';
 
 class Events extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <Section style={this.props.style}>

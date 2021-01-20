@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 
 /* The Colour should of the form #rgb_hex */
 function Wave(props) {
