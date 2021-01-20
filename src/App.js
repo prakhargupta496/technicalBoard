@@ -1,5 +1,7 @@
 import React from 'react';
 import Avant from './pages/Avant';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navigation from './components/Navigation';
 
 class App extends React.Component {
     constructor(props) {
@@ -9,26 +11,36 @@ class App extends React.Component {
 
     render() {
         return (
-            // <Navigation />
-            <Avant />
+            <Router>
+
+                {/* Navbar Component */}
+                <Navigation />
+
+                {/* Routes */}
+                <Switch>
+                    <Route exact path="/">
+                        <Avant />
+                    </Route>
+                    <Route exact path="/resources">
+                        <h1>Resources</h1>
+                    </Route>
+                    <Route exact path="/events">
+                        <h1>Events</h1>
+                    </Route>
+                    <Route exact path="/gallery" >
+                        <h1>Gallery</h1>
+                    </Route>
+                    <Route exact path="/coordinators">
+                        <h1>Coordinators</h1>
+                    </Route>
+                    <Route exact path="/contact">
+                        <h1>Contact Us</h1>
+                    </Route>
+                </Switch>
+
+            </Router>
         );
     }
 }
 
 export default App;
-
-// function navLinkTuple(text, link, page) {
-//     return {
-//         [text]: link,
-//         component: page
-//     };
-// }
-
-// this.navLinks = [
-//     navLinkTuple("Home", "/", <Avant />),
-//     navLinkTuple("Resources", "/resources", <React.Fragment />),
-//     navLinkTuple("Events", "/events", <React.Fragment />),
-//     navLinkTuple("Gallery", "/gallery", <h1>Hello</h1>),
-//     navLinkTuple("Coordinators", "/#coordinators", <React.Fragment />),
-//     navLinkTuple("Contact Us", "/#contact", <React.Fragment />)
-// ];

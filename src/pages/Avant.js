@@ -4,6 +4,7 @@ import About from '../components/About';
 import Gallery from '../components/Gallery';
 import Events from '../components/Events';
 import Coordinators from '../components/Coordinators';
+import Contact from '../components/Contact';
 
 function Avant() {
     return ( 
@@ -19,6 +20,7 @@ function Avant() {
             <Events />
             <Gallery />
             <Coordinators />
+            <Contact />
         </div>
     );
 }

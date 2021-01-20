@@ -1,10 +1,20 @@
 import React from 'react';
 
 function Section(props) {
-    const customStyle = props.style;
+    let customStyle = props.Style;
+    const { innerHeight } = window;
+    
+    // if(customStyle) {
+    //     customStyle.innerHeight = innerHeight;
+    // }
+    // else {
+    //     customStyle = {
+    //         height: innerHeight
+    //     };
+    // }
 
     return (
-        <section Styles={customStyle}>
+        <section style={customStyle}>
             {props.children}
         </section>
     );
