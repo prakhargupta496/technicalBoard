@@ -3,23 +3,23 @@
     border-radius: 0px;
     height: 50px;
     color: black;
-    background-color: white;
-    border: 1px solid black;
+    background-color: rgb(128,128,128);
+    border: none!important;
 }
 
 .button:hover, .button:focus:active {
-    border: 1px solid var(--colour1)!important;
+    border: none!important;
     background-color: var(--colour1)!important;
 }
 
 .folderButton {
-    background-color: rgb(216,216,216);
+    background-color:rgb(168,168,168);
     padding-left: 5%;
     padding-right: 5%;
 }
 
 .itemButton {
-    background-color: rgb(192,192,192);
+    background-color: rgb(211, 211, 211);
     padding-left: 10%;
     padding-right: 10%;
 }
