@@ -8,14 +8,14 @@ class Resources extends React.Component {
         return (
             <Section>
                 <SectionHeader>Resources</SectionHeader>
-                <List>
+                <List.Archives>
                     {
                         [{
                             year: "2021 - 2022",
                             folders : [
                                 {
                                     name: "Orientation 2021",
-                                    items: ["Rec 2021"],
+                                    items: ["Rec 2021", "Or 202", "UI"],
                                 }, 
                                 {
                                     name: "Lorem Ipsum",
@@ -31,9 +31,17 @@ class Resources extends React.Component {
                                     items: ["Rec 2020"],
                                 },
                             ],
+                        },{
+                            year: "2019 - 2020",
+                            folders : [
+                                {
+                                    name: "Orientation 2019",
+                                    items: ["Rec 2020"],
+                                },
+                            ],
                         }]
                     }
-                </List>
+                </List.Archives>
             </Section>
         );
     }

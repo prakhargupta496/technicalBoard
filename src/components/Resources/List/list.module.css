@@ -1,34 +1,29 @@
 .list {
+    border: none;
+    border-radius: 0px;
+    background-color: transparent;
+    margin: 2vh 0px;
+}
+
+.listContainer {
     margin: 0px auto;
     padding: 0px;
 }
 
-.ListGroupItem {
+.listBody {
     padding: 0px;
-    overflow: hidden;
-    transition: all 500ms linear;
-}
-
-.archiveItem {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-    overflow: hidden;
-}
-
-.close {
-    height: 0px;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 991px) {
-    .list {
+    .listContainer {
         width: 300px;
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 992px) {
-    .list {
+    .listContainer {
         width: 40%;
     }
 }

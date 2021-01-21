@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^4.5.3",
     "bootstrap-switch-button-react": "^1.2.0",
+    "firebase": "^8.2.3",
     "framer-motion": "^3.2.1",
     "leaflet": "^1.7.1",
     "node-sass": "^5.0.0",
