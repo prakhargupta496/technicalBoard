@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
-import { FaFacebookSquare as Facebook, FaInstagram as Instagram, FaGithub as GitHub, FaYoutube as YouTube } from "react-icons/fa";
+import { FaFacebookSquare as Facebook, FaInstagram as Instagram, FaGithub as GitHub, FaYoutube as YouTube, FaDiscord as Discord } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Styles from './footer.module.css';
 
@@ -33,17 +33,18 @@ function Footer(props) {
     <section className={Styles.footer}>
       <Container fluid>
 
-        <Row md={3} className={Styles.row}>
-          <Col>
+        <Row className={Styles.row}>
+          <Col sm={12} md={4} className={Styles.col}>
             <FooterHeadings>Other Pages</FooterHeadings>
             <ButtonGroup vertical>
               <FooterItem to="/events">Events</FooterItem>
               <FooterItem to="/gallery">Gallery</FooterItem>
               <FooterItem to="/hallOfFame">Hall Of Fame</FooterItem>
+              <FooterItem to="/resources">Resources</FooterItem>
             </ButtonGroup>
           </Col>
 
-          <Col>
+          <Col sm={12} md={4} className={Styles.col}> 
             <FooterHeadings>Other Technical Clubs</FooterHeadings>
             <ButtonGroup vertical>
               <FooterItem href="#">Mavericks - The Machine Learning Society</FooterItem>
@@ -52,10 +53,9 @@ function Footer(props) {
             </ButtonGroup>
           </Col>
 
-          <Col>
+          <Col sm={12} md={4} className={Styles.col}>
             <FooterHeadings>Miscellaneous</FooterHeadings>
             <ButtonGroup vertical>
-              <FooterItem to="/resources">Resources</FooterItem>
               <FooterItem to="/">Meet The Development Team</FooterItem>
             </ButtonGroup>
           </Col>
@@ -75,6 +75,9 @@ function Footer(props) {
             </FooterItem>
             <FooterItem href="#">
               <YouTube className={Styles.icon} />
+            </FooterItem>
+            <FooterItem href="#">
+              <Discord className={Styles.icon} />
             </FooterItem>
           </Col>
         </Row>

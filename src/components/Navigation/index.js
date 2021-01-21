@@ -1,13 +1,13 @@
 import React from 'react';
 import { Navbar, Nav, Image } from 'react-bootstrap';
 import Brand from '../images/avant.svg';
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Styles from './nav.module.css';
 
 function Navigation() {
     return (
         <Navbar collapseOnSelect variant="light" bg="light" expand="lg" className={Styles.nav} >
-            <Navbar.Brand as={Link} to="/">
+            <Navbar.Brand as={NavLink} to="/">
                 <Image src={Brand} className={`${Styles.image} d-inline-block`} alt="Logo" />
             </Navbar.Brand>
 

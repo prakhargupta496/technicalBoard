@@ -21,6 +21,7 @@ function Contact(props) {
                         </Form>
                     </Col>
                     <Col className={Styles.mapContainer}>
+                        <SectionHeader>Find Us Here</SectionHeader>
                         <Map className={Styles.map} />
                     </Col>
                 </Row>

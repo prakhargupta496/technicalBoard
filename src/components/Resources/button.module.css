@@ -1,0 +1,37 @@
+.button {
+    width: 100%;
+    border-radius: 0px;
+    height: 50px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.button:hover, .button:focus:active {
+    border: 1px solid var(--colour1)!important;
+    background-color: var(--colour1)!important;
+}
+
+.folderButton {
+    background-color: rgb(216,216,216);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.itemButton {
+    background-color: rgb(192,192,192);
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.icon {
+    font-size: 23px;
+}
+
+.contentCol {
+    text-align: left;
+}
+
+.Col {
+    padding: 0px;
+}

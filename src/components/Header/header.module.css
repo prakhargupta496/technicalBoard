@@ -1,6 +1,5 @@
 .header {
     position: relative;
-    background-image: url('./images/background.svg');
     background-size: contain;
 }
 
@@ -28,6 +27,19 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 600px;
-    width: 600px;
+}
+
+@media only screen and (max-width: 699px) {
+    .image {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 700px) {
+    .image {
+        height: 600px;
+        width: 600px;
+    }
 }

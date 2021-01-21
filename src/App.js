@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import EventsPage from './pages/sub-pages/EventsPage';
 import GalleryPage from './pages/sub-pages/GalleryPage';
 import HallOfFame from './pages/sub-pages/HallOfFame';
+import Resources from './components/Resources';
 import Footer from './components/Footer';
 
 class App extends React.Component {
@@ -23,12 +24,10 @@ class App extends React.Component {
                 {/* Routes */}
                 <Switch>
                     <Route exact path="/" component={Avant} />
-                    <Route path="/resources">
-                        <h1>Resources</h1>
-                    </Route>
+                    <Route exact path="/resources" component={Resources} />
                     <Route exact path="/events" component={EventsPage} />
-                    <Route path="/gallery" component={GalleryPage} />
-                    <Route path="/hallOfFame" component={HallOfFame} />
+                    <Route exact path="/gallery" component={GalleryPage} />
+                    <Route exact path="/hallOfFame" component={HallOfFame} />
                 </Switch>
 
                 {/* Footer Component */}

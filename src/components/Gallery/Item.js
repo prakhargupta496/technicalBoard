@@ -6,7 +6,7 @@ import Styles from './item.module.css';
 function Entry(props) {
     return (
         <Col md={4} className={Styles.entry}>
-            <Card className={Styles.card}>
+            <Card className={Styles.card} variant="flush">
                 <Card.Img src={props.src} alt="Card image" className={Styles.image} />
                 <Card.ImgOverlay as={motion.div} className={Styles.overlay} whileHover={{
                     opacity: 1,

@@ -11,7 +11,7 @@ class Item extends React.Component {
     render() {
         return (
             <Col md={4} className={Styles.event}>
-                <Card className={Styles.container}>
+                <Card className={Styles.container} variant="flush">
                     <Card.Img variant="top" src={this.data.image} className={Styles.image} />
                     <Card.Body className={Styles.content}>
                         <Card.Title>{this.data.title}</Card.Title>

@@ -35,9 +35,20 @@
     box-sizing: border-box;
 }
 
-.map {
-    height: 100%;
-    width: 100%;
+
+
+@media only screen and (max-width: 991px) {
+    .map {
+        height: 400px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .map {
+        height: 80%;
+        width: 100%;
+    }
 }
 
 .button {

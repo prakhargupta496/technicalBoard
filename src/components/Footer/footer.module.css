@@ -22,6 +22,11 @@
   padding-bottom: 1vh;
 }
 
+.col {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
 .link {
   background-color: transparent;
   border: 0px;
