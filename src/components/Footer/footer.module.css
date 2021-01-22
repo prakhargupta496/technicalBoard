@@ -7,12 +7,13 @@
   padding-bottom: 2vh;
 }
 
-.heading {
+/* .heading {
   border-bottom: 2px solid white;
-}
+} */
 
 .icon {
-  font-size: 50px;
+  margin-top: 20px;
+  font-size: 40px;
   margin-left: 1vw;
   margin-right: 1vw;
 }
@@ -30,7 +31,7 @@
 .link {
   background-color: transparent;
   border: 0px;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .link:hover, .link:active, .link:focus {
