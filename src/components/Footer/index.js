@@ -6,7 +6,7 @@ import Styles from './footer.module.css';
 
 function FooterHeadings(props) {
   return (
-    <h2 className={Styles.heading}>{props.children}</h2>
+    <h3 className={Styles.heading}>{props.children}</h3>
   );
 }
 
