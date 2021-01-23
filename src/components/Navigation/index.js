@@ -13,7 +13,7 @@ function Navigation() {
 
             <Navbar.Toggle aria-controls="club-nav" />
 
-            <Navbar.Collapse id="club-nav" activeKey="/home">
+            <Navbar.Collapse id="club-nav">
                 <Nav className="ml-auto">
 
                     <Nav.Item>
