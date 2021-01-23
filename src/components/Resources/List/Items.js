@@ -6,7 +6,6 @@ function Items(props) {
 
     return (
         items.map(item => {
-            console.log(item);
             return (
                 <ListButton key={item} item>
                     {item}

@@ -44,7 +44,7 @@ function ListButton(props) {
     if (props.archive || props.folder) {
         return (
             <Accordion.Toggle as={Card.Header} variant="link" eventKey={props.eventKey} className={`${Styles.button} ${props.archive ? Styles.archive : Styles.folder}`}>
-                { childrens}
+                {childrens}
             </Accordion.Toggle>
         );
     }

@@ -31,10 +31,6 @@
     text-align: right;
 }
 
-.icon {
-    font-size: 20px;
-}
-
 .archive {
     background-color: rgb(128,128,128);
 }
@@ -49,4 +45,18 @@
     padding-left: 10%;
     padding-right: 10%;
     background-color: rgb(211,211,211);
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 991px) {
+    .icon {
+        font-size: 12px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 992px) {
+    .icon {
+        font-size: 20px;
+    }
 }

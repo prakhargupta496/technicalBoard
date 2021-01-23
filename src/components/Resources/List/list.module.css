@@ -17,7 +17,7 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 991px) {
     .listContainer {
-        width: 300px;
+        width: 90%;
     }
 }
 
