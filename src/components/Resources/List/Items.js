@@ -5,13 +5,17 @@ function Items(props) {
     const items = props.children;
 
     return (
-        items.map(item => {
-            return (
-                <ListButton key={item} item>
-                    {item}
-                </ListButton>
-            );
-        })
+        items ? (
+            items.map(item => {
+                return (
+                    <ListButton key={item.name} item href={item.link}>
+                        {item.name}
+                    </ListButton>
+                );
+            })
+        ) : (
+            <ListButton empty />
+        )
     );
 }
 

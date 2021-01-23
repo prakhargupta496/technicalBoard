@@ -15,7 +15,7 @@ function Archives(props) {
             {
                 archives.map(archive => {
                     return (
-                        <Archive eventKey={num++}>
+                        <Archive key={archive.year} eventKey={num++}>
                             {archive}
                         </Archive>
                     );
@@ -46,7 +46,7 @@ class Archive extends React.Component {
         const num = this.props.eventKey;
 
         return (
-            <Accordion key={archive.year} className={Styles.list} onClick={this.handleClick}>
+            <Accordion className={Styles.list} onClick={this.handleClick}>
                 {/* Archive Description */}
                 <ListButton archive eventKey={num} isOpen={this.state.open}>
                     {archive.year}

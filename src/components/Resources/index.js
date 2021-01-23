@@ -2,46 +2,94 @@ import React from 'react';
 import Section from '../common/Section';
 import SectionHeader from '../common/SectionHeader';
 import List from './List';
+import Loading from '../common/Effects/Spinner';
+//Firebase
+import firebase from '../../firebase';
+
+/*
+Object Format:-
+[
+    {
+        year: "20XX - 20XX",
+        folders : [
+            {
+                name: "folder_name",
+                items: [{
+                    name: file_name,
+                    link: link_to_file
+                }, {
+                    name: file_name,
+                    link: link_to_file
+                }]
+            }, 
+        ]
+    }
+]
+*/
 
 class Resources extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = null;
+    }
+
+    convertToArchiveObject(snapshot) {
+        const content = snapshot.docs[0].data().archives;
+
+        const newState = content.map(archive => {
+            const archiveName = archive.year;
+
+            const folders = archive.folders.map(folder => {
+                const folderName = folder.name;
+
+                const items = folder.items.map(item => (
+                    {
+                        name: item.name,
+                        link: item.link
+                    }
+                ));
+
+                return ({
+                    name: folderName,
+                    items: items
+                });
+            });
+
+            return ({
+                year: archiveName,
+                folders: folders
+            });
+        });
+
+        return newState;
+    }
+
+    componentDidMount() {
+        const db = firebase.firestore();
+        db.collection('resources').where('name', '==', 'avant').get().then(snapshot => {
+            const newState = this.convertToArchiveObject(snapshot);
+            this.setState(newState);
+        });
+    }
+
     render() {
+        const content = [];
+        for(let i in this.state) {
+            content.push(this.state[i]);
+        }
+
         return (
             <Section>
                 <SectionHeader>Resources</SectionHeader>
-                <List.Archives>
-                    {
-                        [{
-                            year: "2021 - 2022",
-                            folders : [
-                                {
-                                    name: "Orientation 2021",
-                                    items: ["Rec 2021", "Or 202", "UI"],
-                                }, 
-                                {
-                                    name: "Lorem Ipsum",
-                                    items: ["Rec 2022"],
-                                }
-                            ],
-                        },
-                        {
-                            year: "2020 - 2021",
-                            folders : [
-                                {
-                                    name: "Orientation 2020",
-                                    items: ["Rec 2020"],
-                                },
-                            ],
-                        },{
-                            year: "2019 - 2020",
-                            folders : [
-                                {
-                                    name: "Orientation 2019",
-                                    items: ["Rec 2020"],
-                                },
-                            ],
-                        }]
-                    }
-                </List.Archives>
+                {
+                    this.state != null ? (
+                        <List.Archives>
+                            {content}
+                        </List.Archives>
+                    ) : (
+                        <Loading />
+                    ) 
+                }
             </Section>
         );
     }

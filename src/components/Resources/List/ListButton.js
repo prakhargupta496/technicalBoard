@@ -1,29 +1,30 @@
 import React from 'react';
 import { Button, Container, Col, Row, Accordion, Card } from 'react-bootstrap';
-import { FaFolder as FolderIcon, FaFile as FileIcon, FaArchive as Archive, FaArrowUp as UpArrow, FaArrowDown as DownArrow } from "react-icons/fa";
+import { FaFolder as FolderIcon, FaRegTimesCircle as Empty, FaFile as FileIcon, FaArchive as Archive, FaArrowUp as UpArrow, FaArrowDown as DownArrow } from "react-icons/fa";
 import Styles from './button.module.css';
 
 function ListButton(props) {
     const IconContainer = (
         <Col xs={1} className={Styles.col}>
-            {props.archive && (<Archive className={Styles.icon}/>)}
-            {props.folder && (<FolderIcon className={Styles.icon}/>)}
-            {props.item && (<FileIcon className={Styles.icon}/>)}
+            {props.archive && (<Archive className={Styles.icon} />)}
+            {props.folder && (<FolderIcon className={Styles.icon} />)}
+            {props.item && (<FileIcon className={Styles.icon} />)}
+            {props.empty && (<Empty className={Styles.icon} />)}
         </Col>
     );
 
     const TextContainer = (
         <Col xs={props.item ? 11 : 10} className={Styles.col}>
             <h5 className={Styles.content}>
-                {props.children}
+                {props.empty ? "Empty" : props.children}
             </h5>
         </Col>
     );
 
     const ArrowContainer = (
         <Col xs={1} className={Styles.col}>
-            {props.isOpen && (<UpArrow className={Styles.arrow}/>)}
-            {!(props.isOpen) && (<DownArrow className={Styles.arrow}/>)}
+            {props.isOpen && (<UpArrow className={Styles.arrow} />)}
+            {!(props.isOpen) && (<DownArrow className={Styles.arrow} />)}
         </Col>
     );
 
@@ -36,7 +37,7 @@ function ListButton(props) {
                 {/* Text */}
                 {TextContainer}
                 {/* Arrow Icons */}
-                {!(props.item) && ArrowContainer}
+                {!(props.item || props.empty) && ArrowContainer}
             </Row>
         </Container>
     );
@@ -48,11 +49,18 @@ function ListButton(props) {
             </Accordion.Toggle>
         );
     }
-    else {
+    else if (props.item) {
         return (
-            <Button className={`${Styles.button} ${Styles.item}`}>
+            <Button href={props.href} className={`${Styles.button} ${Styles.item}`}>
                 {childrens}
             </Button>
+        );
+    }
+    else {
+        return (
+            <Card.Body className={`${Styles.button} ${Styles.item}`}>
+                {childrens}
+            </Card.Body>
         );
     }
 }

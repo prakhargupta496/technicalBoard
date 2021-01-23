@@ -1,56 +1,53 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import Item from './Item';
+import Loading from '../common/Effects/Spinner';
+//Firebase
+import firebase from '../../firebase';
 
 class Grid extends React.Component {
     constructor(props) {
         super(props);
+        //Hols all the data fetched from the Database
+        this.state = null;
+    }
 
-        //Temporary (Just to develop)
-        this.state = [
-            {
-                title: "Introduction to Web Dev 2021",
-                image: "https://appsmaventech.com/images/blog/The-Evolution-Of-Web-Development-Via-Machine-Learning.jpg",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et vehicula felis. Nullam aliquet libero sit amet scelerisque finibus. Donec commodo iaculis leo vel molestie. Aliquam erat volutpat. Quisque blandit vitae lectus vitae euismod. Etiam malesuada nisl vel ipsum congue ullamcorper. Sed egestas elementum ex, ut varius orci ultricies sit amet. Donec aliquet volutpat lectus hendrerit egestas."
-            },
-            {
-                title: "Introduction to CP",
-                image: "https://appsmaventech.com/images/blog/The-Evolution-Of-Web-Development-Via-Machine-Learning.jpg",
-                description: "Introduction"
-            },
-            {
-                title: "CP Demo",
-                image: "https://appsmaventech.com/images/blog/The-Evolution-Of-Web-Development-Via-Machine-Learning.jpg",
-                description: "Introduction"
-            },
-            {
-                title: "CP Demo",
-                image: "https://appsmaventech.com/images/blog/The-Evolution-Of-Web-Development-Via-Machine-Learning.jpg",
-                description: "Introduction"
-            },
-            {
-                title: "CP Demo",
-                image: "https://appsmaventech.com/images/blog/The-Evolution-Of-Web-Development-Via-Machine-Learning.jpg",
-                description: "Introduction"
-            },
-            {
-                title: "CP Demo",
-                image: "https://appsmaventech.com/images/blog/The-Evolution-Of-Web-Development-Via-Machine-Learning.jpg",
-                description: "Introduction"
-            }
-        ];
+    componentDidMount() {
+        const db = firebase.firestore();
+        db.collection('events').where('name', '==', 'avant').get().then(snapshot => {
+            const content = snapshot.docs[0].data().list;
+
+            const newState = content.map(event => (
+                {
+                    title: event.name,
+                    image: "https://appsmaventech.com/images/blog/The-Evolution-Of-Web-Development-Via-Machine-Learning.jpg",
+                    description: "Introduction"
+                }
+            ));
+
+            this.setState(newState);
+        });
     }
 
     render() {
+        let items = [];
+
+        for (let i in this.state) {
+            items.push(
+                <Item key={i} data={this.state[i]} />
+            );
+        }
+
         return (
             <Container fluid>
-                <Row>
-                    {
-                        this.state.map(item => {
-                            return <Item key={item.title} data={item}/>;
-                        })
-                    }
-                </Row>
+                { this.state ? (
+                        <Row>
+                            {items}
+                        </Row>
+                    ) : (
+                        <Loading />
+                    )
+                }
             </Container>
         );
     }

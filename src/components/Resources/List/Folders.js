@@ -9,13 +9,17 @@ function Folders(props) {
     let num = 1;
 
     return (
-        folders.map(folder => {
-            return (
-                <Folder eventKey={num}>
-                    {folder}
-                </Folder>        
-            );
-        })
+        folders ? (
+            folders.map(folder => {
+                return (
+                    <Folder key={folder.name} eventKey={num}>
+                        {folder}
+                    </Folder>
+                );
+            })
+        ) : (
+            <ListButton empty />
+        )
     );
 }
 
@@ -40,7 +44,7 @@ class Folder extends React.Component {
         const folder = this.props.children;
 
         return (
-            <Accordion key={num} onClick={this.handleClick} >
+            <Accordion onClick={this.handleClick} >
                 {/* Folder Description */}
                 <ListButton folder eventKey={num} isOpen={this.state.open}>
                     {folder.name}
