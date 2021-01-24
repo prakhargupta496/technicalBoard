@@ -38,7 +38,10 @@ Object Format:-
 class Resources extends React.Component {
     constructor(props) {
         super(props);
-        this.state = null;
+
+        this.state = {
+            newArr: []
+        }
     }
 
     convertToArchiveObject(snapshot) {
@@ -76,16 +79,11 @@ class Resources extends React.Component {
         const db = firebase.firestore();
         db.collection('resources').where('name', '==', 'avant').get().then(snapshot => {
             const newState = this.convertToArchiveObject(snapshot);
-            this.setState(newState);
+            this.setState({newArr: newState});
         });
     }
 
     render() {
-        const content = [];
-        for(let i in this.state) {
-            content.push(this.state[i]);
-        }
-
         return (
             <Section>
                 <SectionHeader>Resources</SectionHeader>
@@ -93,7 +91,7 @@ class Resources extends React.Component {
                 {
                     this.state != null ? (
                         <List.Archives>
-                            {content}
+                            {this.state.newArr}
                         </List.Archives>
                     ) : (
                         <Loading />
