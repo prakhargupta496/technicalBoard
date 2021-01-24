@@ -4,6 +4,12 @@
     text-align: center;
 }
 
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
 .icon {
     font-size: 150px;
 }
