@@ -16,18 +16,26 @@ function SubHeading(props) {
 class Resources extends React.Component {
     constructor(props) {
         super(props);
-        this.state = null;
+
+        this.state = {
+            newArr: []
+        }
     }
 
     componentDidMount() {
         const db = firebase.firestore();
         db.collection('resources').where('name', '==', 'avant').get().then(snapshot => {
+<<<<<<< HEAD
             const data = snapshot.docs[0].data();
 
             this.setState({
                 archives: data.archives,
                 videos: data.videos
             });
+=======
+            const newState = this.convertToArchiveObject(snapshot);
+            this.setState({newArr: newState});
+>>>>>>> d321c0fae386841a6e45e0827b5bd43866dd9d87
         });
     }
 
@@ -35,6 +43,7 @@ class Resources extends React.Component {
         return (
             <Section>
                 <SectionHeader>Resources</SectionHeader>
+<<<<<<< HEAD
                 { this.state && this.state.videos &&
                     (
                         <React.Fragment>
@@ -57,6 +66,17 @@ class Resources extends React.Component {
                             <SubHeading>Blogs</SubHeading>
                         </React.Fragment>
                     )
+=======
+                <SubHeading>Documents</SubHeading>
+                {
+                    this.state != null ? (
+                        <List.Archives>
+                            {this.state.newArr}
+                        </List.Archives>
+                    ) : (
+                        <Loading />
+                    ) 
+>>>>>>> d321c0fae386841a6e45e0827b5bd43866dd9d87
                 }
             </Section>
         );
