@@ -2,9 +2,17 @@ import React from 'react';
 import Section from '../common/Section';
 import SectionHeader from '../common/SectionHeader';
 import List from './List';
+import Video from './Video/';
 import Loading from '../common/Effects/Spinner';
+import Styles from './resources.module.css';
 //Firebase
 import firebase from '../../firebase';
+
+function SubHeading(props) {
+    return (
+        <h3 className={Styles.subHeading}>{props.children}</h3>
+    );
+}
 
 /*
 Object Format:-
@@ -81,6 +89,7 @@ class Resources extends React.Component {
         return (
             <Section>
                 <SectionHeader>Resources</SectionHeader>
+                <SubHeading>Documents</SubHeading>
                 {
                     this.state != null ? (
                         <List.Archives>
@@ -90,6 +99,9 @@ class Resources extends React.Component {
                         <Loading />
                     ) 
                 }
+                <SubHeading>Videos</SubHeading>
+                <Video />
+                <SubHeading>Blogs</SubHeading>
             </Section>
         );
     }
