@@ -3,6 +3,7 @@ import Section from '../common/Section';
 import SectionHeader from '../common/SectionHeader';
 import Videos from './Videos';
 import List from './List';
+import Spinner from '../common/Effects/Spinner';
 import Styles from './resources.module.css';
 //Firebase
 import firebase from '../../firebase';
@@ -17,25 +18,18 @@ class Resources extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            newArr: []
-        }
+        this.state = null;
     }
 
     componentDidMount() {
         const db = firebase.firestore();
-        db.collection('resources').where('name', '==', 'avant').get().then(snapshot => {
-<<<<<<< HEAD
+        db.collection('resources').where('name', '==', 'avant').get().then(snapshot => {            
             const data = snapshot.docs[0].data();
 
             this.setState({
                 archives: data.archives,
                 videos: data.videos
             });
-=======
-            const newState = this.convertToArchiveObject(snapshot);
-            this.setState({newArr: newState});
->>>>>>> d321c0fae386841a6e45e0827b5bd43866dd9d87
         });
     }
 
@@ -43,40 +37,36 @@ class Resources extends React.Component {
         return (
             <Section>
                 <SectionHeader>Resources</SectionHeader>
-<<<<<<< HEAD
-                { this.state && this.state.videos &&
-                    (
-                        <React.Fragment>
-                            <SubHeading>Documents</SubHeading>
-                            <List data={this.state && this.state.archives} />       
-                        </React.Fragment>
-                    )
-                }
-                { this.state && this.state.videos &&
-                    (
-                        <React.Fragment>
-                            <SubHeading>Videos</SubHeading>
-                            <Videos data={this.state && this.state.videos} />
-                        </React.Fragment>
-                    )
-                }
-                { this.state && this.state.blogs &&
-                    (
-                        <React.Fragment>
-                            <SubHeading>Blogs</SubHeading>
-                        </React.Fragment>
-                    )
-=======
-                <SubHeading>Documents</SubHeading>
                 {
-                    this.state != null ? (
-                        <List.Archives>
-                            {this.state.newArr}
-                        </List.Archives>
+                    this.state ? (
+                        <React.Fragment>
+                            { this.state.archives &&
+                                (
+                                    <React.Fragment>
+                                        <SubHeading>Documents</SubHeading>
+                                        <List data={this.state && this.state.archives} />
+                                    </React.Fragment>
+                                )
+                            }
+                            { this.state.videos &&
+                                (
+                                    <React.Fragment>
+                                        <SubHeading>Videos</SubHeading>
+                                        <Videos data={this.state && this.state.videos} />
+                                    </React.Fragment>
+                                )
+                            }
+                            { this.state.blogs &&
+                                (
+                                    <React.Fragment>
+                                        <SubHeading>Blogs</SubHeading>
+                                    </React.Fragment>
+                                )
+                            }
+                        </React.Fragment>
                     ) : (
-                        <Loading />
-                    ) 
->>>>>>> d321c0fae386841a6e45e0827b5bd43866dd9d87
+                        <Spinner />
+                    )
                 }
             </Section>
         );

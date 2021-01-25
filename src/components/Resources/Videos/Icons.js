@@ -8,7 +8,8 @@ function Icons(props) {
         <Container fluid className={Styles.container}>
             <Row>
                 <Col>
-                    <Share className={Styles.icon} />
+                    {/* TODO - Add a Overlay to show that the link is copied, Use Bootstrap Overlay Component */}
+                    <Share className={Styles.icon} onClick={() => {navigator.clipboard.writeText(props.textToCopy)}}/>
                 </Col>
                 <Col></Col>
             </Row>

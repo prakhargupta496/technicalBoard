@@ -18,7 +18,7 @@ function Item(props) {
                         {props.description}
                     </Card.Text>
                 </div>
-                <Icons />
+                <Icons textToCopy={props.src} />
             </Card.Body>
         </Card>
 

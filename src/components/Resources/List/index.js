@@ -1,7 +1,5 @@
 import React from 'react';
 import Archives from './Archives';
-import Folders from './Folders';
-import Items from './Items';
 import Spinner from '../../common/Effects/Spinner';
 
 /*
