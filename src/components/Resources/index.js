@@ -1,9 +1,9 @@
 import React from 'react';
 import Section from '../common/Section';
 import SectionHeader from '../common/SectionHeader';
+import Videos from './Videos';
 import List from './List';
-import Video from './Video/';
-import Loading from '../common/Effects/Spinner';
+import Spinner from '../common/Effects/Spinner';
 import Styles from './resources.module.css';
 //Firebase
 import firebase from '../../firebase';
@@ -14,72 +14,22 @@ function SubHeading(props) {
     );
 }
 
-/*
-Object Format:-
-[
-    {
-        year: "20XX - 20XX",
-        folders : [
-            {
-                name: "folder_name",
-                items: [{
-                    name: file_name,
-                    link: link_to_file
-                }, {
-                    name: file_name,
-                    link: link_to_file
-                }]
-            }, 
-        ]
-    }
-]
-*/
-
 class Resources extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            newArr: []
-        }
-    }
-
-    convertToArchiveObject(snapshot) {
-        const content = snapshot.docs[0].data().archives;
-
-        const newState = content.map(archive => {
-            const archiveName = archive.year;
-
-            const folders = archive.folders.map(folder => {
-                const folderName = folder.name;
-
-                const items = folder.items.map(item => (
-                    {
-                        name: item.name,
-                        link: item.link
-                    }
-                ));
-
-                return ({
-                    name: folderName,
-                    items: items
-                });
-            });
-
-            return ({
-                year: archiveName,
-                folders: folders
-            });
-        });
-
-        return newState;
+        this.state = null;
     }
 
     componentDidMount() {
         const db = firebase.firestore();
-        db.collection('resources').where('name', '==', 'avant').get().then(snapshot => {
-            const newState = this.convertToArchiveObject(snapshot);
-            this.setState({newArr: newState});
+        db.collection('resources').where('name', '==', 'avant').get().then(snapshot => {            
+            const data = snapshot.docs[0].data();
+
+            this.setState({
+                archives: data.archives,
+                videos: data.videos
+            });
         });
     }
 
@@ -87,19 +37,37 @@ class Resources extends React.Component {
         return (
             <Section>
                 <SectionHeader>Resources</SectionHeader>
-                <SubHeading>Documents</SubHeading>
                 {
-                    this.state != null ? (
-                        <List.Archives>
-                            {this.state.newArr}
-                        </List.Archives>
+                    this.state ? (
+                        <React.Fragment>
+                            { this.state.archives &&
+                                (
+                                    <React.Fragment>
+                                        <SubHeading>Documents</SubHeading>
+                                        <List data={this.state && this.state.archives} />
+                                    </React.Fragment>
+                                )
+                            }
+                            { this.state.videos &&
+                                (
+                                    <React.Fragment>
+                                        <SubHeading>Videos</SubHeading>
+                                        <Videos data={this.state && this.state.videos} />
+                                    </React.Fragment>
+                                )
+                            }
+                            { this.state.blogs &&
+                                (
+                                    <React.Fragment>
+                                        <SubHeading>Blogs</SubHeading>
+                                    </React.Fragment>
+                                )
+                            }
+                        </React.Fragment>
                     ) : (
-                        <Loading />
-                    ) 
+                        <Spinner />
+                    )
                 }
-                <SubHeading>Videos</SubHeading>
-                <Video />
-                <SubHeading>Blogs</SubHeading>
             </Section>
         );
     }
