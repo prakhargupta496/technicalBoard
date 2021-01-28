@@ -48,7 +48,7 @@ class Events extends React.Component {
                     )
                 }
                 {   this.props.small &&
-                    (<Link href="#" small>Load More</Link>)
+                    (<Link href={this.props.href} small>Load More</Link>)
                 }
             </Section>
         );

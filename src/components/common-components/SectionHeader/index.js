@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './sectionHeader.module.css';
+import Styles from './sectionHeader.module.css';
 
 function SectionHeader(props) {
     return (
-        <h1 className={styles.heading}>
+        <h1 className={Styles.heading} style={props.Style}>
             {props.children}
         </h1>
     );

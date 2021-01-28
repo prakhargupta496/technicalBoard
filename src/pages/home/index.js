@@ -15,7 +15,7 @@ function Home() {
                 altName: 'Indian Institute of Information Technology Guwahati',
                 link: "#",
                 linkText: "Our Clubs",
-                image: Image
+                image: Image,
             }}/>
             <About id="about"/>
             <Clubs id="clubs" />

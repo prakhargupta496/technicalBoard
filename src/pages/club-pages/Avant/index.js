@@ -33,8 +33,8 @@ function Avant() {
                 bg: Background
             }} />
             <About id="about" />
-            <Events id="events" small />
-            <Gallery id="gallery" small />
+            <Events id="events" small href="/avant/events" />
+            <Gallery id="gallery" small href="/avant/gallery" />
             <Wave type="hex" color={sectionColour}/>
             <Coordinators id="coordinators" withHeading style = {{
                 backgroundColor: sectionColour,
