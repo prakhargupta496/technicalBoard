@@ -1,17 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap');
-
 body {
     overflow-x: hidden;
-}
-
-:root {
-    /* Colour Scheme */
-    --colour1: #e8417c;
-    --colour2: #bc3b8d;
-    --colour3: #090809;
-    --colour4: #73cdff;
-    --colour5: #235789;
-
-    /* Fonts */
-    --cabin: 'Cabin', sans-serif;
 }

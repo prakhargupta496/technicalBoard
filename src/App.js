@@ -1,41 +1,39 @@
 import React from 'react';
-import Avant from './pages/Avant';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navigation from './components/Navigation';
-import EventsPage from './pages/sub-pages/EventsPage';
-import GalleryPage from './pages/sub-pages/GalleryPage';
-import HallOfFame from './pages/sub-pages/HallOfFame';
-import Resources from './components/Resources';
-import Footer from './components/Footer';
+import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
+import Avant from './pages/club-pages/Avant';
+import Navigation from './components/common-sections/Navigation';
+import Footer from './components/common-sections/Footer';
+import Home from './pages/home';
+import Resources from './components/club-page/Resources';
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
+function App() {
+    const URLMatcher = /^\/([^\/]*).*$/;
 
-    render() {
-        return (
-            <Router>
+    let page = useLocation();
+    page = page.pathname;
+    page = URLMatcher.exec(page)[1].toLowerCase();
 
-                {/* Navbar Component */}
-                <Navigation />
+    console.log(`/${page}/resources`);
 
-                {/* Routes */}
-                <Switch>
-                    <Route exact path="/" component={Avant} />
-                    <Route exact path="/resources" component={Resources} />
-                    <Route exact path="/events" component={EventsPage} />
-                    <Route exact path="/gallery" component={GalleryPage} />
-                    <Route exact path="/hallOfFame" component={HallOfFame} />
-                </Switch>
+    return (
+        <React.Fragment>
+            {/* Navbar Component */}
+            <Navigation path={page} />
 
-                {/* Footer Component */}
-                <Footer />
+            {/* Routes */}
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path={`/${"avant".toLowerCase()}`} component={Avant} />
+                <Route exact path={`/${page}/resources`}>
+                    <Resources />
+                </Route>
+            </Switch>
 
-            </Router>
-        );
-    }
+            {/* Footer Component */}
+            <Footer />
+
+        </React.Fragment>
+    );
 }
 
 export default App;
