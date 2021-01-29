@@ -55,7 +55,7 @@ function Footer(props) {
           <Col sm={12} md={4} className={Styles.col}>
             <FooterHeadings>Miscellaneous</FooterHeadings>
             <ButtonGroup vertical>
-              <FooterItem to="/">Meet The Development Team</FooterItem>
+              <FooterItem to="/team">Meet The Development Team</FooterItem>
             </ButtonGroup>
           </Col>
         </Row>

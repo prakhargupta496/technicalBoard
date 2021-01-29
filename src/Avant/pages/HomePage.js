@@ -10,7 +10,7 @@ import Wave from '../components/common/Effects/Wave';
 import BackgroundImage from './images/backgroundImage.svg';
 import HeaderImage from './images/headerImage.svg';
 
-function Avant(props) {
+function Home(props) {
     const sectionColour = "#73cdff";
 
     return ( 
@@ -43,4 +43,4 @@ function Avant(props) {
     );
 }
 
-export default Avant;
+export default Home;

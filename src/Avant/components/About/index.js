@@ -28,7 +28,7 @@ class About extends React.Component {
 
     componentDidMount() {
         const db = firebase.firestore();
-        db.collection('about').where('name', '==', 'avant').get().then(snapshot => {
+        db.collection('about').get().then(snapshot => {
             this.setState(state => ({
                 width: state.width,
                 content: snapshot.docs[0].data()['content']
