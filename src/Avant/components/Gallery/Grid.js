@@ -4,28 +4,24 @@ import Styles from './grid.module.css';
 import Spinner from '../common/Effects/Spinner';
 import Item from './Item';
 
-class Grid extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = null;
-    }
+function Grid(props) {
+    const items = props.children.map(image => {
+        return (<Item key={image.description} alt={image.description} src={image.src} />);
+    });
 
-    render() {
+    return (
+        <Container fluid className={Styles.grid}>
+            { this.state ? (
+                <Row>
+                    {items}
+                </Row>
+            ) : (
+                    <Spinner />
+                )
+            }
 
-        // <Item key={item.description} src={item.image} />
-
-        return (
-            <Container fluid className={Styles.grid}>
-                { this.state ? (
-                    <Row></Row>
-                ) : (
-                        <Spinner />
-                    )
-                }
-
-            </Container>
-        );
-    }
+        </Container>
+    );
 }
 
 export default Grid;
