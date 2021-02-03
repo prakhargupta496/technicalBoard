@@ -2,7 +2,6 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 //Clubs
 import Avant from './Avant';
-//import GDSC from './GoogleDeveloperStudentClub';
 //Home Page
 import Home from './Home';
 //App Globals
@@ -22,10 +21,8 @@ function App() {
             <Navigation page={page} />
 
             {/* Routes */}
-
             <Home />
             <Avant />
-            {/* <GDSC /> */}
 
             {/* Footer Component */}
             <Footer page={page} />

@@ -4,7 +4,7 @@ import Link from './link';
 import Styles from './item.module.css';
 
 function Item(props) {
-    const data = props.data;
+    const data = props.children;
 
     return (
         <Col md={12} className={Styles.Container}>
@@ -16,7 +16,13 @@ function Item(props) {
                     <Col className={`${Styles.Col} ${Styles.contentContainer}`}>
                         <div className={Styles.content}>
                             <h1 className={Styles.title}>{data.title}</h1>
-                            <p className={Styles.description}>{data.description}</p>
+                            {
+                                data.description ? (
+                                    <p className={Styles.description}>{data.description}</p>
+                                ) : (
+                                        <p className={Styles.description}>Loading...</p>
+                                    )
+                            }
                         </div>
                         <Container fluid className={Styles.linksContainer}>
                             <Row>

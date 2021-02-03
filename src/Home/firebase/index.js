@@ -13,6 +13,6 @@ const config = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(config);
+const backend = firebase.initializeApp(config, "Home");
 
-export default firebase;
+export default backend;
