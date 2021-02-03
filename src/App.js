@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Switch, Redirect, useLocation } from 'react-router-dom';
 //Clubs
 import Avant from './Avant';
 //Home Page
@@ -7,6 +7,7 @@ import Home from './Home';
 //App Globals
 import Navigation from './Navigation';
 import Footer from './Footer';
+import ErrorObj from './Error';
 
 function App() {
     const URLMatcher = /^\/([^\/]*).*$/;
@@ -23,6 +24,12 @@ function App() {
             {/* Routes */}
             <Home />
             <Avant />
+
+            <Switch>
+                <Redirect to="/error404" >
+                    <ErrorObj.Error404 />
+                </Redirect>
+            </Switch>
 
             {/* Footer Component */}
             <Footer page={page} />

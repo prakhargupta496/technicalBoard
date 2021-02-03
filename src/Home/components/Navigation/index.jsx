@@ -23,7 +23,7 @@ function Navigation(props) {
                         <Nav.Link smooth as={NavHashLink} to="/#about">About Us</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link smooth as={NavHashLink} to="/#council">Council</Nav.Link>
+                        <Nav.Link smooth as={NavHashLink} to="/past-council">Past Council</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link smooth as={NavHashLink} to="/#clubs">Clubs</Nav.Link>
