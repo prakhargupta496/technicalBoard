@@ -9,11 +9,13 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 
 function App() {
-    const URLMatcher = /^\/([^\/]*).*$/;
+    const URLMatcher = /^\/(\w*).*$/;
 
     let page = useLocation();
     page = page.pathname;
+    console.log(page);
     page = URLMatcher.exec(page)[1].toLowerCase();
+    console.log(page);
 
     return (
         <React.Fragment>
