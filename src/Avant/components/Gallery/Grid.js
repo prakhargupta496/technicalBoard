@@ -7,7 +7,7 @@ function Grid(props) {
     const images = props.children;
 
     const items = images.map(image => {
-        return (<Item key={image.description} alt={image.description} src={image.src} title={image.title} />);
+        return (<Item key={image.title} alt={image.description} src={image.src} title={image.title} />);
     });
 
     return (

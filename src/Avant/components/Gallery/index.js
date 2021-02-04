@@ -17,13 +17,6 @@ class Gallery extends React.Component {
         };
         //Binding Methods
         this.fetchAllURL = this.fetchAllURL.bind(this);
-        this.returnImages = this.returnImages.bind(this);
-    }
-
-    returnImages() {
-        const refs = this.state.urlRefs;
-        const arrImage = refs.map((image) => <img key={image} src={image} alt="xx" />);
-        return arrImage;
     }
 
     fetchAllURL(doc) {
@@ -35,7 +28,6 @@ class Gallery extends React.Component {
                     src: url,
                 })
             }));
-            console.log(this.state.images);
         });
     }
 
@@ -54,7 +46,6 @@ class Gallery extends React.Component {
 
     render() {
         const images = this.state.images;
-        console.log(images.length);
 
         return (
             <Section id={this.props.id} style={this.props.style}>

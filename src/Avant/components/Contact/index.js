@@ -21,7 +21,7 @@ class Contact extends React.Component {
             showAlert: false
         }
 
-        this.pushData = this.pushData.bind(this);
+        // this.pushData = this.pushData.bind(this);
     }
 
     validateEmail(email) {
