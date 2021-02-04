@@ -4,8 +4,10 @@ import Styles from './grid.module.css';
 import Item from './Item';
 
 function Grid(props) {
-    const items = props.children.map(image => {
-        return (<Item key={image.description} alt={image.description} src={image.src} />);
+    const images = props.children;
+
+    const items = images.map(image => {
+        return (<Item key={image.description} alt={image.description} src={image.src} title={image.title} />);
     });
 
     return (

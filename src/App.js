@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Redirect, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 //Clubs
 import Avant from './Avant';
 //Home Page
@@ -24,12 +24,6 @@ function App() {
             {/* Routes */}
             <Home />
             <Avant />
-
-            <Switch>
-                <Redirect to="/error404" >
-                    <ErrorObj.Error404 />
-                </Redirect>
-            </Switch>
 
             {/* Footer Component */}
             <Footer page={page} />

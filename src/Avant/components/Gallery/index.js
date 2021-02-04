@@ -5,27 +5,68 @@ import SectionHeader from '../common/SectionHeader';
 import Grid from './Grid';
 import Spinner from '../common/Effects/Spinner';
 import { NavHashLink } from 'react-router-hash-link';
+//firebase
+import firebase from '../../firebase';
 
 class Gallery extends React.Component {
     constructor(props) {
         super(props);
+        //State
         this.state = {
-            image: null
+            images: []
         };
+        //Binding Methods
+        this.fetchAllURL = this.fetchAllURL.bind(this);
+        this.returnImages = this.returnImages.bind(this);
+    }
+
+    returnImages() {
+        const refs = this.state.urlRefs;
+        const arrImage = refs.map((image) => <img key={image} src={image} alt="xx" />);
+        return arrImage;
+    }
+
+    fetchAllURL(doc) {
+        const storage = firebase.storage().ref();
+        storage.child(doc.ref).getDownloadURL().then((url) => {
+            this.setState(state => ({
+                images: state.images.concat({
+                    title: doc.title,
+                    src: url,
+                })
+            }));
+            console.log(this.state.images);
+        });
+    }
+
+    componentDidMount() {
+        const db = firebase.firestore();
+        db.collection('gallery').get().then((snapshot) => {
+            const docs = snapshot.docs;
+            for(let i in docs) {
+                if(this.props.small && parseInt(i) >= 6) {
+                    break;
+                }
+                this.fetchAllURL(docs[i].data());
+            }
+        })
     }
 
     render() {
+        const images = this.state.images;
+        console.log(images.length);
+
         return (
             <Section id={this.props.id} style={this.props.style}>
                 <SectionHeader>Gallery</SectionHeader>
                 {
-                    this.state.image ? (
+                    (images.length !== 0 ) ? (
                         <Grid>
-                            {this.state.image}
+                            {images}
                         </Grid>
                     ) : (
                             <Spinner />
-                    )
+                        )
                 }
                 {   this.props.small &&
                     <Link as={NavHashLink} href={this.props.href} small>Load More</Link>

@@ -13,7 +13,7 @@ function Entry(props) {
                     transition: { duration: 0.2 },
                 }}>
                     <Card.Body className={Styles.content}>
-                        <Card.Title as="h1" className={Styles.heading}>Card title</Card.Title>
+                        <Card.Title as="h1" className={Styles.heading}>{props.title}</Card.Title>
                     </Card.Body>
                 </Card.ImgOverlay>
             </Card>

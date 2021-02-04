@@ -6,11 +6,11 @@ import App from './App';
 
 function ScrollToTop() {
     const { pathname } = useLocation();
-  
+
     useEffect(() => {
-      window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     }, [pathname]);
-  
+
     return null;
 }
 
@@ -18,5 +18,4 @@ ReactDOM.render(
     <Router>
         <ScrollToTop />
         <App />
-    </Router>
-    , document.getElementById('root'));
+    </Router>, document.getElementById('root'));
