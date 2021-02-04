@@ -7,10 +7,9 @@ import Home from './Home';
 //App Globals
 import Navigation from './Navigation';
 import Footer from './Footer';
-import ErrorObj from './Error';
 
 function App() {
-    const URLMatcher = /^\/([^\/]*).*$/;
+    const URLMatcher = /.*$/;
 
     let page = useLocation();
     page = page.pathname;

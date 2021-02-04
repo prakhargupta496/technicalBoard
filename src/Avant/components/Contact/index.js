@@ -7,7 +7,7 @@ import Styles from './contact.module.css';
 //Images
 import ChatImage from './images/chat.svg';
 //Firebase
-import firebase from '../../firebase';
+// import firebase from '../../firebase';
 
 class Contact extends React.Component {
 
@@ -27,7 +27,6 @@ class Contact extends React.Component {
     validateEmail(email) {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
-
     }
 
     getSubset(obj) {
@@ -35,24 +34,24 @@ class Contact extends React.Component {
         return { name, email, subject, message };
     }
 
-    async pushData() {
-        const db = firebase.firestore();
-        let obj = this.state;
-        let dataObj = this.getSubset(obj);
+    // async pushData() {
+    //     const db = firebase.firestore();
+    //     let obj = this.state;
+    //     let dataObj = this.getSubset(obj);
 
-        if (!this.validateEmail(obj.email)) {
-            this.setState({ showAlert: true });
-        }
-        else {
-            this.setState({
-                showAlert: false,
-                name: "",
-                email: "",
-                subject: "",
-                message: ""
-            });
-        }
-    }
+    //     if (!this.validateEmail(obj.email)) {
+    //         this.setState({ showAlert: true });
+    //     }
+    //     else {
+    //         this.setState({
+    //             showAlert: false,
+    //             name: "",
+    //             email: "",
+    //             subject: "",
+    //             message: ""
+    //         });
+    //     }
+    // }
 
     render() {
         const emailAlert = <Alert variant="danger">Wrong Email! Please enter correct email</Alert>;
@@ -68,7 +67,7 @@ class Contact extends React.Component {
                     {this.state.showAlert && emailAlert}
                     <Form.Control className={`${Styles.input} ${Styles.small}`} type="text" placeholder="Subject" value={this.state.subject} onChange={(e) => this.setState({ subject: e.target.value })} />
                     <Form.Control className={`${Styles.input} ${Styles.big}`} as="textarea" rows={5} placeholder="Message" value={this.state.message} onChange={(e) => this.setState({ message: e.target.value })} />
-                    <Button className={Styles.button} onClick={this.pushData}>Submit</Button>
+                    <Button className={Styles.button}>Submit</Button>
                 </Form>
             </React.Fragment>
         );
