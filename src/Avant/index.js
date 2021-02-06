@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import AvantPages from './pages';
+import Pages from './pages';
 import './avant.module.css';
 
 function Avant(props) {
     return (
         <Switch>
-            <Route path="/avant/event" component={AvantPages.Event} />
-            <Route path="/avant/gallery" component={AvantPages.Gallery} />
-            <Route path="/avant/past-coordinators" component={AvantPages.PastCoordinators} />
-            <Route path="/avant/resources" component={AvantPages.Resources} />
-            <Route path="/avant" component={AvantPages.Home} />
+            <Route path="/avant/gallery" component={Pages.Gallery} />
+            <Route path="/avant/events" component={Pages.Event} />
+            <Route path="/avant/past-coordinators" component={Pages.PastCoordinators} />
+            <Route path="/avant/resources" component={Pages.Resources} />
+            <Route exact path="/avant" component={Pages.Home} />
         </Switch>
     );
 }

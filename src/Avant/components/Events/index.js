@@ -10,7 +10,7 @@ import firebase from '../../firebase';
 class Events extends React.Component {
     constructor(props) {
         super(props);
-        //Hols all the data fetched from the Database
+        //Holds all the data fetched from the Database
         this.state = null;
     }
 
@@ -47,7 +47,7 @@ class Events extends React.Component {
                         <Spinner />
                     )
                 }
-                {   this.props.small &&
+                {   (this.props.small && !this.props.big) &&
                     (<Link href={this.props.href} small>Load More</Link>)
                 }
             </Section>

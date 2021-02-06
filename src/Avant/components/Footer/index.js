@@ -44,10 +44,10 @@ function Footer(props) {
           <Col sm={12} md={4} className={Styles.col}>
             <FooterHeadings>Other Pages</FooterHeadings>
             <ButtonGroup vertical>
-              <FooterItem to="/events">Events</FooterItem>
-              <FooterItem to="/gallery">Gallery</FooterItem>
-              <FooterItem to="/hallOfFame">Hall Of Fame</FooterItem>
-              <FooterItem to="/resources">Resources</FooterItem>
+              <FooterItem to="/avant/events">Events</FooterItem>
+              <FooterItem to="/avant/gallery">Gallery</FooterItem>
+              <FooterItem to="/avant/past-coordinators">Past Coordinators</FooterItem>
+              <FooterItem to="/avant/resources">Resources</FooterItem>
               <FooterItem to="/">Technical Board</FooterItem>
             </ButtonGroup>
           </Col>
